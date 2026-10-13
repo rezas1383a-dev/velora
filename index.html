@@ -5,6 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="دفتر مهندسی برق ولورا | طراحی و اجرای تخصصی برق و نورپردازی در کرمانشاه و حومه">
   <title>دفتر مهندسی برق ولورا | VELORA</title>
+  
+/* بزرگ‌نمایی عکس‌های نمونه‌کار */
+.projects img {
+  cursor: zoom-in;
+  transition: filter .2s ease;
+}
+
+.projects img:hover {
+  filter: brightness(1.06);
+}
+
+.velora-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(0, 0, 0, .94);
+}
+
+.velora-lightbox.is-open {
+  display: flex;
+}
+
+.velora-lightbox img {
+  display: block;
+  max-width: 96vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.velora-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #777;
+  border-radius: 50%;
+  background: #171717;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .velora-lightbox img {
+    max-width: 98vw;
+    max-height: 84vh;
+  }
+}
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
