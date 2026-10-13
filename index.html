@@ -381,27 +381,43 @@
   </div>
 </footer>
 
-  <div id="imageModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;padding:15px;box-sizing:border-box;">
-  <span id="closeImage" style="position:absolute;top:15px;right:20px;color:white;font-size:40px;cursor:pointer;">×</span>
-  <img id="modalImage" style="max-width:100%;max-height:90vh;object-fit:contain;border-radius:10px;">
-  </div>
-  <script>
-document.addEventListener('click', function(e){
-  if(e.target.tagName === 'IMG' && e.target.closest('.project')){
-    document.getElementById('modalImage').src = e.target.src;
-    document.getElementById('imageModal').style.display = 'flex';
-  }
-});
+(function(){
+  const box = document.getElementById('velora-lightbox');
+  if (!box) return;
+  const largeImage = box.querySelector('img');
+  const closeButton = box.querySelector('.velora-lightbox-close');
+  let previousFocus = null;
 
-document.getElementById('closeImage').onclick = function(){
-  document.getElementById('imageModal').style.display = 'none';
-};
-
-document.getElementById('imageModal').onclick = function(e){
-  if(e.target === this){
-    this.style.display = 'none';
+  function openImage(img){
+    previousFocus = document.activeElement;
+    largeImage.src = img.currentSrc || img.src;
+    largeImage.alt = img.alt || 'تصویر نمونه‌کار';
+    box.classList.add('is-open');
+    box.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
   }
-};
-  </script>
+
+  function closeImage(){
+    box.classList.remove('is-open');
+    box.setAttribute('aria-hidden','true');
+    largeImage.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+  }
+
+  document.addEventListener('click', function(event){
+    const img = event.target.closest('.projects img');
+    if (img){ event.preventDefault(); openImage(img); return; }
+    if (event.target === box || event.target === closeButton){
+      closeImage();
+    }
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && box.classList.contains('is-open')) closeImage();
+  });
+})();
+</script>
 </body>
 </html>
