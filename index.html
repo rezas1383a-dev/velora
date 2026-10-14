@@ -415,7 +415,7 @@
   document.addEventListener('click', function (event) {
     if (!(event.target instanceof Element)) return;
 
-    const img = event.target.closest('#projects .projects img');
+    const img = event.target.closest('.projects img');
 
     if (img) {
       event.preventDefault();
