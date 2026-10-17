@@ -297,7 +297,69 @@
   </div>
 
   <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:70px 28px 28px;width:calc(100% - 56px);max-width:calc(100% - 56px);box-sizing:border-box;min-width:0;">
-<img src="line-lighting/IMG_20261017_233609_664.jpg"
+<script>
+(function () {
+  const container = document.currentScript.parentElement;
+
+  const photos = [
+    'IMG_20261017_233609_664.jpg',
+    'IMG_20261017_233609_737.jpg',
+    'IMG_20261017_233609_946.jpg',
+    'IMG_20261017_233610_266.jpg',
+    'IMG_20261017_233610_532.jpg',
+    'IMG_20261017_233612_101.jpg',
+    'IMG_20261017_233612_184.jpg',
+    'IMG_20261017_233612_262.jpg',
+    'IMG_20261017_233612_359.jpg',
+    'IMG_20261017_233612_557.jpg',
+    'IMG_20261017_233612_564.jpg',
+    'IMG_20261017_233612_617.jpg',
+    'IMG_20261017_233612_625.jpg',
+    'IMG_20261017_233612_658.jpg',
+    'IMG_20261017_233613_048.jpg',
+    'IMG_20261017_233615_112.jpg',
+    'IMG_20261017_233615_141.jpg',
+    'IMG_20261017_233615_214.jpg',
+    'IMG_20261017_233615_353.jpg',
+    'IMG_20261017_233615_373.jpg',
+    'IMG_20261017_233615_428.jpg',
+    'IMG_20261017_233615_667.jpg',
+    'IMG_20261017_233615_727.jpg',
+    'IMG_20261017_233615_824.jpg',
+    'IMG_20261017_233615_877.jpg',
+    'IMG_20261017_233617_536.jpg',
+    'IMG_20261017_233617_723.jpg',
+    'IMG_20261017_233617_734.jpg',
+    'IMG_20261017_233617_769.jpg',
+    'IMG_20261017_233617_822.jpg',
+    'IMG_20261017_233617_940.jpg',
+    'IMG_20261017_233617_982.jpg',
+    'IMG_20261017_233618_353.jpg',
+    'IMG_20261017_233618_368.jpg',
+    'IMG_20261017_233618_380.jpg',
+    'IMG_20261017_233619_969.jpg',
+    'IMG_20261017_233619_998.jpg',
+    'IMG_20261017_233620_272.jpg',
+    'IMG_20261017_233620_286.jpg',
+    'IMG_20261017_233620_349.jpg',
+    'IMG_20261017_233620_444.jpg',
+    'IMG_20261017_233620_777.jpg',
+    'IMG_20261017_233620_847.jpg',
+    'IMG_20261017_233620_914.jpg',
+    'IMG_20261017_233620_915.jpg'
+  ];
+
+  photos.forEach(function (filename) {
+    const img = document.createElement('img');
+    img.src = 'line-lighting/' + filename;
+    img.alt = 'نمونه‌کار لاین نوری';
+    img.loading = 'lazy';
+    img.style.cssText =
+      'width:100%;height:150px;object-fit:cover;border-radius:10px;display:block;cursor:zoom-in;';
+    container.appendChild(img);
+  });
+})();
+</script>
      alt="نمونه‌کار لاین نوری"
      style="width:100%;height:150px;object-fit:cover;border-radius:10px;display:block;">
 
