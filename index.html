@@ -362,7 +362,58 @@ o<!DOCTYPE html>
   </div>
         </article>
         <article class="project"><div class="ptext"><strong>نورپردازی فروشگاه</strong><span>نمونه پروژه</span></div></article>
-        <article class="project"><div class="ptext"><strong>نور مخفی</strong><span>نمونه پروژه</span></div></article>
+        <article class="project" style="padding:18px;box-sizing:border-box;min-width:0;">
+  <div class="ptext">
+    <strong>نور مخفی</strong>
+    <span>نمونه پروژه نور مخفی</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px;">
+    <script>
+    (function () {
+      const container = document.currentScript.parentElement;
+      const photos = [
+        'IMG_20261017_234736_911.jpg',
+        'IMG_20261017_234737_255.jpg',
+        'IMG_20261017_234737_280.jpg',
+        'IMG_20261017_234737_712.jpg',
+        'IMG_20261017_234739_399.jpg',
+        'IMG_20261017_234739_597.jpg',
+        'IMG_20261017_234739_888.jpg',
+        'IMG_20261017_234739_941.jpg',
+        'IMG_20261017_234740_156.jpg',
+        'IMG_20261017_234740_272.jpg',
+        'IMG_20261017_234742_847.jpg',
+        'IMG_20261017_234742_866.jpg',
+        'IMG_20261017_234742_872.jpg',
+        'IMG_20261017_234742_983.jpg',
+        'IMG_20261017_234743_033.jpg',
+        'IMG_20261017_234743_166.jpg',
+        'IMG_20261017_234743_440.jpg',
+        'IMG_20261017_234743_668.jpg',
+        'IMG_20261017_234743_697.jpg',
+        'IMG_20261017_234743_730.jpg',
+        'IMG_20261017_234746_442.jpg',
+        'IMG_20261017_234746_495.jpg',
+        'IMG_20261017_234746_498.jpg',
+        'IMG_20261017_234746_658.jpg',
+        'IMG_20261017_234746_815.jpg',
+        'IMG_20261017_234746_862.jpg',
+        'IMG_20261017_234747_147.jpg',
+        'IMG_20261017_234747_174.jpg',
+        'IMG_20261017_234747_232.jpg'
+      ];
+      photos.forEach(function (filename) {
+        const img = document.createElement('img');
+        img.src = 'hidden-lighting/' + filename;
+        img.alt = 'نمونه‌کار نور مخفی';
+        img.loading = 'lazy';
+        img.style.cssText = 'width:100%;height:170px;object-fit:cover;border-radius:10px;display:block;';
+        container.appendChild(img);
+      });
+    })();
+    </script>
+  </div>
+        </article>
         <article class="project"><div class="ptext"><strong>روشنایی نما</strong><span>نمونه پروژه</span></div></article>
         <article class="project"><div class="ptext"><strong>روشنایی تجاری</strong><span>نمونه پروژه</span></div></article>
       </div>
